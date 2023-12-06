@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useMemo, useState } from 'react'
 
 import Grid from '@mui/material/Grid'
 import Box from '@mui/material/Box'
@@ -29,6 +29,19 @@ const useStyles = makeStyles(() => ({
 
 const Table = () => {
   const classes = useStyles()
+  const [search, setSearch] = useState('')
+  const handleSearch = (event) => {
+    event.preventDefault()
+
+    const { target: { value } } = event
+
+    setSearch(value)
+  }
+  const tableData = useMemo(() => Object.entries(data).filter((row) => {
+    const [_, { question }] = row
+
+    return question.toLowerCase().includes(search.toLowerCase())
+  }), [data, search])
 
   return (
     <>
@@ -46,8 +59,8 @@ const Table = () => {
             name='search'
             variant="outlined"
             placeholder='Search for projects, QP#'
-            value={''}
-            onChange={() => {}}
+            value={search}
+            onChange={handleSearch}
             fullWidth
             sx={{
               background: '#FFFFFF'
@@ -143,7 +156,7 @@ const Table = () => {
           </ tr>
         </thead>
         <tbody>
-          {data && Object.entries(data).map((row) => {
+          {tableData.map((row) => {
             const [key, poll] = row
 
             return (
