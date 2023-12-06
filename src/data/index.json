@@ -1,0 +1,100 @@
+{
+  "1": {
+    "question": "Question 1: What size(s) are you purchasing? Are you buying multiple sizes? Why or why not? Reminder you must buy them in Size 1, 2 or 3 only. Select the one(s) you typically use for daytime use \n (Please also explain verbally)",
+    "options": [
+      {
+        "answer": "1 (Regular, yellow wrapper)",
+        "score": "45%"
+      },
+      {
+        "answer": "2 (Long Super, green wrapper)",
+        "score": "45.5%"
+      },
+      {
+        "answer": "3 (Extra Long Super, blue wrapper) ",
+        "score": "18.2%"
+      }
+    ],
+    "participants": "11"
+  },
+  "2": {
+    "question": "Question 2: What was the main reason(s) you went to the restroom? Select up to 2 options \n (Please select all that apply)",
+    "options": [
+      {
+        "answer": "To go to the bathroom",
+        "score": "75%"
+      },
+      {
+        "answer": "To check how full my pad was",
+        "score": "0%"
+      },
+      {
+        "answer": "To check the placement/bunching of my pad",
+        "score": "25%"
+      },
+      {
+        "answer": "It was convenient / $1 Incentive for Taking a Picture",
+        "score": "0%"
+      }
+    ],
+    "participants": "8"
+  },
+  "3": {
+    "question": "Question 3: What was your main activity between the previous bathroom visit? When you apply your first pad, please select Applying the Pad to my Panties. \n (Please select all that apply)",
+    "options": [
+      {
+        "answer": "Standing / Walking",
+        "score": "20%"
+      },
+      {
+        "answer": "Sitting",
+        "score": "0%"
+      },
+      {
+        "answer": "Exercising (running, biking, etc.)",
+        "score": "0%"
+      },
+      {
+        "answer": "Lying Down (including sleeping)",
+        "score": "80%"
+      }
+    ],
+    "participants": "8"
+  },
+  "4": {
+    "question": "Question 4: Are you planning to change your pad? \n (Please select one option)",
+    "options": [
+      {
+        "answer": "Yes",
+        "score": "12.5%"
+      },
+      {
+        "answer": "No, I will continue to use the pad I have on",
+        "score": "87.5%"
+      }
+    ],
+    "participants": "8"
+  },
+  "5": {
+    "question": "Question 5: How would you rate this pad on Feels Clean? \n (Please select one option)",
+    "options": [
+      {
+        "answer": "Excellent",
+        "score": "100%"
+      },
+      {
+        "answer": "Very Good",
+        "score": "0%"
+      },
+      {
+        "answer": "Good",
+        "score": "0%"
+      },
+      {
+        "answer": "Fair",
+        "score": "0%"
+      }
+    ],
+    "participants": "1"
+  }
+}
