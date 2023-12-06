@@ -1,17 +1,18 @@
-import React, { useMemo } from 'react'
+import React, { useMemo, lazy, Suspense } from 'react'
 
 import { Routes, Route } from 'react-router-dom'
 
 import Grid from '@mui/material/Grid'
 import Box from '@mui/material/Box'
-
-import Header from './components/Header'
-import Home from './pages/Home'
-import Views from './pages/Views'
-import Tasks from './pages/Tasks'
-import PageNotFound from './pages/PageNotFound'
+import CircularProgress from '@mui/material/CircularProgress'
 
 import "./App.css"
+
+const Header = lazy(() => import('./components/Header'))
+const Home = lazy(() => import('./pages/Home'))
+const Views = lazy(() => import('./pages/Views'))
+const Tasks = lazy(() => import('./pages/Tasks'))
+const PageNotFound = lazy(() => import('./pages/PageNotFound'))
 
 const Wrapper = ({ component, props })=> {
   const Component = useMemo(() => component, [component, props])
@@ -26,13 +27,15 @@ const Wrapper = ({ component, props })=> {
 const App = () => {
 	return (
     <Box>
-      <Header />
-      <Routes>
-        <Route path='/' element={<Wrapper component={Home} props={{}} />} />
-        <Route path='/views' element={<Wrapper component={Views} props={{}} />} />
-        <Route path='/tasks' element={<Wrapper component={Tasks} props={{}} />} />
-        <Route path='*' element={<Wrapper component={PageNotFound} props={{}} />} />
-      </Routes>
+      <Suspense fallback={<CircularProgress color="secondary" />}>
+        <Header />
+        <Routes>
+          <Route path='/' element={<Wrapper component={Home} props={{}} />} />
+          <Route path='/views' element={<Wrapper component={Views} props={{}} />} />
+          <Route path='/tasks' element={<Wrapper component={Tasks} props={{}} />} />
+          <Route path='*' element={<Wrapper component={PageNotFound} props={{}} />} />
+        </Routes>
+      </Suspense>
     </Box>
 	)
 }
