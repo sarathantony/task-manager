@@ -1,13 +1,14 @@
-import React from 'react'
+import React, { lazy, Suspense } from 'react'
 
 import Grid from '@mui/material/Grid'
+import CircularProgress from '@mui/material/CircularProgress'
 
-import Chart from '../components/Chart'
-import Table from '../components/Table'
+const Table = lazy(() => import('../components/Table'))
+const Chart = lazy(() => import('../components/Chart'))
 
 const Views = () => {
   return (
-    <>
+    <Suspense fallback={<CircularProgress color="secondary" />}>
       <Grid container>
         <Grid item>
           <Table />
@@ -21,7 +22,7 @@ const Views = () => {
           <Chart />
         </Grid>
       </Grid>
-    </>
+    </Suspense>
   )
 }
 
