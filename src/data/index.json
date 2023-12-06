@@ -1,6 +1,6 @@
 {
   "1": {
-    "question": "Question 1: What size(s) are you purchasing? Are you buying multiple sizes? Why or why not? Reminder you must buy them in Size 1, 2 or 3 only. Select the one(s) you typically use for daytime use \n (Please also explain verbally)",
+    "question": "Question 1: What size(s) are you purchasing? Are you buying multiple sizes? Why or why not? Reminder you must buy them in Size 1, 2 or 3 only. Select the one(s) you typically use for daytime use </br> (Please also explain verbally)",
     "options": [
       {
         "answer": "1 (Regular, yellow wrapper)",
@@ -18,7 +18,7 @@
     "participants": "11"
   },
   "2": {
-    "question": "Question 2: What was the main reason(s) you went to the restroom? Select up to 2 options \n (Please select all that apply)",
+    "question": "Question 2: What was the main reason(s) you went to the restroom? Select up to 2 options </br> (Please select all that apply)",
     "options": [
       {
         "answer": "To go to the bathroom",
@@ -40,7 +40,7 @@
     "participants": "8"
   },
   "3": {
-    "question": "Question 3: What was your main activity between the previous bathroom visit? When you apply your first pad, please select Applying the Pad to my Panties. \n (Please select all that apply)",
+    "question": "Question 3: What was your main activity between the previous bathroom visit? When you apply your first pad, please select Applying the Pad to my Panties. </br> (Please select all that apply)",
     "options": [
       {
         "answer": "Standing / Walking",
@@ -62,7 +62,7 @@
     "participants": "8"
   },
   "4": {
-    "question": "Question 4: Are you planning to change your pad? \n (Please select one option)",
+    "question": "Question 4: Are you planning to change your pad? </br> (Please select one option)",
     "options": [
       {
         "answer": "Yes",
@@ -76,7 +76,7 @@
     "participants": "8"
   },
   "5": {
-    "question": "Question 5: How would you rate this pad on Feels Clean? \n (Please select one option)",
+    "question": "Question 5: How would you rate this pad on Feels Clean? </br> (Please select one option)",
     "options": [
       {
         "answer": "Excellent",

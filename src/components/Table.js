@@ -7,6 +7,8 @@ import { TextField } from '@mui/material'
 import { makeStyles } from '@material-ui/core/styles'
 import ExitToAppOutlinedIcon from '@mui/icons-material/ExitToAppOutlined'
 
+import DOMPurify from 'dompurify'
+
 import data from '../data'
 
 import '../App.css'
@@ -153,7 +155,15 @@ const Table = () => {
                   <Typography color='slategray'>{poll.participants}</Typography>
                 </td>
                 <td className={classes['text-content']} style={{ width: '50%'}}>
-                  <Typography color='slategray' sx={{ wordWrap: 'break-word'}}>{poll.question}</Typography>
+                  <div
+                    style={{
+                      wordWrap: 'break-word',
+                      color: 'slategray'
+                    }}
+                    dangerouslySetInnerHTML={{
+                      __html: DOMPurify.sanitize(poll.question)
+                      }}
+                    />
                 </td>
                 <td className={classes['text-content']} colSpan={2} style={{ width: '35%'}}>
                   {poll.options && poll.options.map((option) => {
