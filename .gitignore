@@ -1,9 +1,14 @@
 .DS_STORE
+
 node_modules
-build/
-dist/
+
+# deployment for github-pages
+## build/
+## dist/
+
 *.log*
 chrome-user-data
+
 *.sublime-project
 *.sublime-workspace
 .idea
