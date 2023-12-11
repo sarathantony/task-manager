@@ -8,7 +8,9 @@ import { makeStyles } from '@material-ui/core/styles'
 import ExitToAppOutlinedIcon from '@mui/icons-material/ExitToAppOutlined'
 
 import DOMPurify from 'dompurify'
+import { useCSVDownloader } from 'react-papaparse'
 
+import { prepareCSV } from '../utils'
 import data from '../data'
 
 import '../App.css'
@@ -27,9 +29,23 @@ const useStyles = makeStyles(() => ({
   }
 }))
 
+const ExportHeader = ({ downloadable }) => {
+  return (
+    <Grid container columnGap={1} justifyContent='end'>
+      <Box sx={{ cursor: downloadable ? 'pointer' : 'not-allowed' }}>
+        <ExitToAppOutlinedIcon sx={{ color: downloadable ? '#A7A7A7' : 'slategray' }} fontSize='medium' />
+      </Box>
+      <Box sx={{ cursor: downloadable ? 'pointer' : 'not-allowed' }}>
+        <Typography color={downloadable ? '#67B7D1' : 'slategray'}>Export to excel</Typography>
+      </Box>
+    </Grid>
+  )
+}
+
 const Table = () => {
   const classes = useStyles()
   const [search, setSearch] = useState('')
+  const { CSVDownloader, Type } = useCSVDownloader()
   const handleSearch = (event) => {
     event.preventDefault()
 
@@ -80,14 +96,17 @@ const Table = () => {
           />
         </Grid>
         <Grid item xs={9}>
-          <Grid container columnGap={1} justifyContent='end'>
-            <Box sx={{ cursor: 'pointer' }}>
-              <ExitToAppOutlinedIcon sx={{ color: '#A7A7A7' }} fontSize='medium' />
-            </Box>
-            <Box sx={{ cursor: 'pointer' }}>
-              <Typography color='#67B7D1'>Export to excel</Typography>
-            </Box>
-          </Grid>
+          {tableData.length ? (
+            <CSVDownloader
+              type={Type.Link}
+              filename={'survey'}
+              bom={false}
+              data={prepareCSV(tableData)}
+            >
+              <ExportHeader downloadable={tableData.length} />
+            </CSVDownloader>
+            ) : <ExportHeader downloadable={tableData.length} />
+          }
         </Grid>
       </Grid>
       <table className={classes['content-table']}>

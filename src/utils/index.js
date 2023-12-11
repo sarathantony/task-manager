@@ -1,7 +1,9 @@
+import { NEW_LINE } from '../constants'
+
 /**
  * (capitalize) => (Capitalize)
- * 
- * @param {value} string 
+ *
+ * @param {value} string
  * @returns string
  */
 function capitalizeFirstLetter(value) {
@@ -12,8 +14,8 @@ function capitalizeFirstLetter(value) {
 
 /**
  * (to pascal case) => (To Pascal Case)
- * 
- * @param {value} string 
+ *
+ * @param {value} string
  * @returns string
  */
 function toPascalCase(value) {
@@ -24,7 +26,21 @@ function toPascalCase(value) {
     .join(' ')
 }
 
+function prepareCSV (data) {
+  if (!data.length) return ''
+
+  const jsonData = data.map((row) => {
+    const [_, { question, options, participants}] = row
+    const optionList = options.map(({ answer, score }) => `${answer}: ${score}${NEW_LINE}`).join(' ')
+
+    return { question, participants, optionList }
+  })
+
+  return jsonData
+}
+
 export {
   capitalizeFirstLetter,
-  toPascalCase
+  toPascalCase,
+  prepareCSV
 }

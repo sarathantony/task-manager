@@ -89,6 +89,8 @@ const chartTemplate = {
   'answer 4': 0
 }
 
+const NEW_LINE = '\n'
+
 export {
   PERCENT_INCREMENTOR,
   NUMERIC_ZERO,
@@ -101,5 +103,6 @@ export {
   statusColors,
   ACTIONS,
   formData,
-  chartTemplate
+  chartTemplate,
+  NEW_LINE
 }
